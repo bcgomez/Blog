@@ -1,22 +1,37 @@
+---
+import '../styles/global.css';
+interface Props {
+  title: string;
+}
+
+
+const { title } = Astro.props;
+
+import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+
+// Metadatos base
+const pageTitle = `${title} | Mi blog - Bárbara Gómez Pérez`;
+const pageDescription = "Estudiante de Ingeniería Informática";
+
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{pageTitle}</title>
+    	<meta name="description" content={pageDescription} />
+		<ClientRouter />
 	</head>
-	<body>
-		<slot />
+		<body class="absolute inset-0 -z-10 h-full w-full bg-fuchsia-50 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+			<Header/>
+			<slot />
+		<Footer/>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

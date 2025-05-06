@@ -1,0 +1,73 @@
+---
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+// Proyectos 
+const projects = [
+  {
+    image: "https://cdn.sanity.io/images/5vm5yn1d/pro/5cb1f9400891d9da5a4926d7814bd1b89127ecba-1300x867.jpg?fm=webp&q=80",
+    title: "Task Manager App",
+    description: "Aplicación de gestión de tareas con arrastrar y soltar, construida con React y TypeScript.",
+    stack: ["React", "TypeScript", "Tailwind", "Node.js"],
+    link: "https://www.geeksforgeeks.org/"
+  },
+  {
+    image: "https://cdn.sanity.io/images/5vm5yn1d/pro/5cb1f9400891d9da5a4926d7814bd1b89127ecba-1300x867.jpg?fm=webp&q=80",
+    title: "E-commerce Platform",
+    description: "Plataforma de comercio electrónico con sistema de pago integrado y panel de administración.",
+    stack: ["Next.js", "MongoDB", "Stripe", "Node.js"],
+    link: "#"
+  },
+  {
+    image: "https://cdn.sanity.io/images/5vm5yn1d/pro/5cb1f9400891d9da5a4926d7814bd1b89127ecba-1300x867.jpg?fm=webp&q=80",
+    title: "Blog Personal",
+    description: "Sistema de blog estático con soporte para Markdown y búsqueda integrada.",
+    stack: ["Astro", "Markdown", "JavaScript", "CSS"],
+    link: "#"
+  }
+];
+---
+
+<div class="flex flex-col gap-y-16 p-2">
+  {projects.map(({ image, title, description, stack, link }) => (
+    <article class="flex flex-col md:flex-row md:space-x-8 group relative">
+      {/* Imagen del proyecto */}
+      <div class="w-full md:w-5/12">
+        <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-200 lg:hover:border-gray-300 lg:hover:bg-gray-400/50 mb-3">
+          <img
+            alt={title}
+            class="w-full h-auto sm:h-56 object-cover object-center transition-transform duration-500 ease-in-out md:h-full md:group-hover:scale-105"
+            loading="lazy"
+            src={image}
+          />
+        </div>
+      </div>
+
+      {/* Botón flotante */}
+      {link && (
+        <div class="absolute top-0 right-0 m-4">
+          <LinkButton href={link}>
+            <Link class="size-3 md:size-4" />
+          </LinkButton>
+        </div>
+      )}
+
+      {/* Contenido del proyecto */}
+      <div class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mt-2">{title}</h3>
+          <ul class="flex flex-wrap mt-2 gap-2">
+            {stack.map((tech) => (
+              <li>
+                <span class="flex items-center rounded-full text-xs bg-fuchsia-200/60 text-gray-800 py-1 px-2">
+                  # {tech}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-2 text-gray-500">{description}</p>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
