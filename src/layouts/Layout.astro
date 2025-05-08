@@ -30,7 +30,10 @@ const pageDescription = "Estudiante de Ingeniería Informática";
 	</head>
 		<body class="absolute inset-0 -z-10 h-full w-full bg-fuchsia-50 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
 			<Header/>
-			<slot />
+			<main class="max-w-5xl p-8 m-auto">
+				<slot />
+			</main>
+			
 		<Footer/>
 	</body>
 </html>

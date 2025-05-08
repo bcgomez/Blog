@@ -1,0 +1,76 @@
+---
+import BlogPost from "../../components/BlogPost.astro";
+
+const meta = {
+  title: "Proyecto IA",
+  date: "2025-05-8",
+  category: "Tecnología",
+  image: "/images/MachineLearning.avif",
+  categoryClass: "bg-green-100 text-green-800"
+};
+---
+
+<BlogPost {meta}>
+  <p class="text-xl mb-6">
+    Desarrollar un sistema inteligente basado en técnicas de machine learning que permita identificar de forma temprana posibles vulnerabilidades en fragmentos de código fuente, con el fin de apoyar la prevención de errores de seguridad en aplicaciones de software.
+  </p>
+
+  <h2 class="text-3xl font-bold mt-8 mb-4">Objetivos</h2>
+  <div class="space-y-4">
+    <p>Objetivos específicos:</p>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Investigar y seleccionar algoritmos de machine learning adecuados para la detección de vulnerabilidades en código.</li>
+      <li>Construir o adaptar un dataset con ejemplos de código vulnerable y no vulnerable.</li>
+      <li>Diseñar y entrenar un modelo para analizar fragmentos de código fuente.</li>
+      <li>Evaluar el rendimiento del sistema usando métricas como precisión, recall y F1-score.</li>
+      <li>Diseñar una interfaz o prototipo funcional para visualizar los resultados del modelo.</li>
+    </ul>
+  </div>
+
+  <h2 class="text-3xl font-bold mt-8 mb-4">Configuración Inicial</h2>
+  <div class="space-y-4">
+    <p>Pasos para comenzar:</p>
+    <ol class="list-decimal pl-6 space-y-2">
+      <li>
+        Descargar la última versión desde <a
+          href="https://www.python.org/"
+          class="text-green-600 hover:underline">python.org</a>
+      </li>
+      <li>Instalar con las opciones predeterminadas</li>
+      <li>
+        Verificar instalación con <code
+          class="bg-gray-100 px-2 py-1 rounded">python --version</code>
+      </li>
+      <li>
+        Configurar entorno virtual recomendado: <code
+          class="bg-gray-100 px-2 py-1 rounded"
+          >python -m venv mi_entorno</code>
+      </li>
+    </ol>
+  </div>
+
+  <h2 class="text-3xl font-bold mt-8 mb-4">Características Clave</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-2">Legibilidad</h3>
+      <p>Código limpio con indentación significativa que mejora la mantenibilidad.</p>
+    </div>
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-2">Versatilidad</h3>
+      <p>Desde scripts simples hasta sistemas complejos con múltiples paradigmas.</p>
+    </div>
+    <div class="p-6 bg-white rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-2">Ecosistema</h3>
+      <p>Más de 200,000 paquetes en PyPI para todo tipo de aplicaciones.</p>
+    </div>
+  </div>
+
+  <div class="bg-green-50 p-6 rounded-xl mt-8">
+    <h3 class="text-2xl font-semibold mb-3">🐍 Curiosidad Pythonica</h3>
+    <p class="mb-0">
+      El nombre Python viene de "Monty Python's Flying Circus", no de la
+      serpiente. ¡Los documentos oficiales incluyen referencias al grupo
+      cómico!
+    </p>
+  </div>
+</BlogPost>
