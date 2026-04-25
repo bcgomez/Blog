@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s # Con qué frecuencia recolectar métricas
+
+scrape_configs:
+  # Monitorea al propio Prometheus
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Recolecta métricas del contenedor Nginx a través de su exportador
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-exporter:9113']
